@@ -1,0 +1,64 @@
+javac -cp "lib/*" -d classes src/filename.java
+java -cp "lib/*;classes" classname
+
+1. import java.nio.file.*; // To work with file paths and directories
+2. import java.util.*; // For utility classes like List, ArrayList, etc.
+3. import org.apache.pdfbox.pdmodel.PDDocument; // To load and manage PDF documents
+4. import org.apache.pdfbox.text.PDFTextStripper; // To extract text content from PDFs
+5. import org.apache.poi.xwpf.usermodel.XWPFDocument; // To read DOCX (Word) documents
+6. import org.apache.poi.xwpf.usermodel.XWPFParagraph; // To read paragraphs in DOCX
+7. import org.apache.poi.xslf.usermodel.XMLSlideShow; // To load PPTX presentations
+8. import org.apache.poi.xslf.usermodel.XSLFSlide; // To access individual slides in PPTX
+9. import org.apache.poi.xslf.usermodel.XSLFShape; // To handle shapes and objects in slides
+
+----------------------------------------------------------------
+Required JAR Files and Their Purpose:
+
+1.pdfbox-.jar
+
+->Core library to read, write, and manipulate PDF documents.
+
+2. fontbox-.jar
+
+->Required by PDFBox to handle fonts in PDF documents.
+
+3. commons-logging-.jar
+
+->Logging support for PDFBox and other Apache libraries.
+
+4. poi-.jar
+
+->Base library for reading and writing Microsoft Office formats.
+
+5.poi-ooxml-.jar
+
+->Supports Office Open XML formats like DOCX, PPTX.
+
+6. poi-ooxml-schemas-.jar
+
+->Provides schema definitions for DOCX, PPTX file structures.
+
+7. xmlbeans-.jar
+
+->Parses and processes XML content in DOCX/PPTX files.
+
+8. curvesapi-.jar
+
+->Optional, enhances shape and curve rendering in documents.
+
+9. ooxml-schemas-.jar
+
+->Contains extended schemas needed by Apache POI.
+
+10.commons-collections4-.jar
+
+->Used by Apache POI for advanced collection handling.
+--------------------------------------------------------------------
+
+->docker build --platform linux/amd64 -t mysolutionname:uniqueid .
+
+->docker run --rm \
+-v $(pwd)/input:/app/input \
+-v $(pwd)/output:/app/output \
+--network none \
+mysolutionname:uniqueid
